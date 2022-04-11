@@ -11,13 +11,13 @@ Campo Minado é um jogo de apenas um jogador que tem como objetivo revelar um ca
 
 ![Campo Minado](images/campominado.png)
 
-A partir de uma matriz de entrada de tamanho m x n com valores 'x', representando as bombas, e 'o', onde não há bombas. O algoritmo, então, calcula e monta a matriz de dicas do jogo, substituindo o símbolo 'o' pelo número adequado. 
+Através da utilização de threads, a ideia deste projeto é desenvolver um programa que recebe, como entrada, uma matriz de minas e retorna, como saída, uma matriz de dicas. A estrutura de dados principal é uma matriz de entrada de tamanho m x n com valores 'x', representando as bombas, e 'o', onde não há bombas. O algoritmo, então, realiza um processamento sobre essa estrutura e monta a matriz de dicas do jogo, substituindo o símbolo 'o' pelo número adequado.
 
 ## Uso das threads
 
-Esse cálculo é feito usando threads, onde o processo de contagem de minas e troca do elemento 'o' pelo número de bombas ao redor do campo será feito concorrencialmente em todas as linhas da matriz de entrada. 
+O cálculo de bombas é feito usando threads, onde o processo de contagem de minas e troca do elemento 'o' pelo número de bombas ao redor do campo será feito concorrencialmente em todas as linhas da matriz de entrada. 
 
-O algoritmo executado em cada thread percorre a linha da matriz em busca de um elemento que não é uma mina. Ao achar esse, ele inicia sua contagem em zero e percorre os 8 vizinhos desse espaço, que podem ser vistos na imagem abaixo, contando as bombas.
+O algoritmo executado em cada thread percorre a linha da matriz em busca de um elemento que não é uma mina. Ao achar esse, ele inicia sua contagem em zero e percorre os 8 vizinhos desse espaço, contando as bombas.
 
 ## Destaques de código
 
