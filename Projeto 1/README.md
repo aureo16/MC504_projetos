@@ -21,6 +21,15 @@ O algoritmo executado em cada thread percorre a linha da matriz em busca de um e
 
 ## Destaques de código
 
+A função "dicas" é o método passado para cada thread e é responsável pela tarefa de contagem de bombas e substituição dos valores na matriz. Ela recebe como parâmetro a linha em que a thread vai atuar. Com isso, a função percorre cada posição da linha, analisando a quantidade de bombas presentes nas posições vizinhas e, por fim, insere tal quantidade na respectiva posição.
+
+![funcao_dicas](images/codigo_dicas.png)
+
+Para a criação das threads, primeiramente é realizada a leitura da matriz de bombas. Em posse da dimensão dessa matriz, as threads são criadas utilizando o método "pthread_create" e passando para ele o id da thread, a função "dicas" e o parâmetro "i", o qual indica a linha da matriz. Em seguida, é usado "pthread_join" para finalização das threads.
+
+![funcao_threads](images/codigo_threads.png)
+
+
 ## Exemplo de execução
 
 Foram realizadas duas execuções para analisar o funcionamento do código. A primeira com uma matriz de dimensão 8x8 e a segunda com uma matriz de 6x12. Abaixo, são mostrados os resultados dessas execuções.
