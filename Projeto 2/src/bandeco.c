@@ -127,16 +127,16 @@ int main() {
   sem_init(&sem_verifFilaExterna, 0, N_CAPACIDADE_FILA_EXTERNA);
   sem_init(&sem_estado_catracas, 0, 1);
 
+  for (int i = 0; i < N_FILA_INTERNA; i++){
+    sem_init(&sem_filaInterna[i], 0, N_CAPACIDADE_FILA_INTERNA);
+    sem_init(&sem_verifFilaInterna[i], 0, 1);
+  }
+
   for (int i = 0; i < N_ASSENTOS; i++ )
     alunosAssento[i] = AL;
 
   for (int i = 0; i < N_CATRACAS; i++ )
     alunosCatracas[i] = L;
-
-  for (int i = 0; i < N_FILA_INTERNA; i++){
-    sem_init(&sem_filaInterna[i], 0, N_CAPACIDADE_FILA_INTERNA);
-    sem_init(&sem_verifFilaInterna[i], 0, 1);
-  }
 
   for (int i = 0; i < N_ALUNOS; i++) {
     id_alunos[i] = i;
